@@ -1,5 +1,4 @@
 service mysql start
-
 #EDIT FOR ALL ACCESS
 chown -R www-data /var/www/*
 chmod -R 755 /var/www/*
@@ -21,8 +20,8 @@ rm -rf /etc/nginx/sites-enabled/default
 
 # CONFIG MYSQL AND USER
 echo "CREATE DATABASE wordpress;" | mysql -u root --skip-password
-echo "CREATE USER 'pd'@'locahost' IDENTIFIER BY 'QWERTY';" | mysql -u root --skip-password
-echo "GRANT ALL PRIVILEGES ON wordpress.* TO 'pd'@'localhost' IDENTIFIED BY 'QWERTY' WITH GRANT OPTION;" | mysql -u root --skip-password
+echo "CREATE USER 'me'@'locahost' IDENTIFIER BY 'me';" | mysql -u root --skip-password
+echo "GRANT ALL PRIVILEGES ON wordpress.* TO 'me'@'localhost' IDENTIFIED BY 'me' WITH GRANT OPTION;" | mysql -u root --skip-password
 # echo "update mysql.user set plugin='mysql_native_password' where user='charli';" | mysql -u root --skip-password
 # echo "FLUSH PRIVILEGES;" | mysql -u root --skip-password
 
